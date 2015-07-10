@@ -22,3 +22,4 @@ EXPOSE 3000
 
 ONBUILD COPY . /app/src
 ONBUILD RUN npm install
+ONBUILD RUN bower install
