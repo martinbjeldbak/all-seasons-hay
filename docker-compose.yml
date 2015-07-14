@@ -1,9 +1,8 @@
 web:
-  build: .
-  command: npm start
+  extends:
+    file: common.yml
+    service: web
   volumes:
-    - .:/app/src
-  ports:
-    - "3000:3000"
+    - ./app:/app/src
   environment:
     - NODE_ENV=development
