@@ -7,4 +7,4 @@ web:
   environment:
     - NODE_ENV=development
     - PASSENGER_APP_ENV=development
-    - PORT=4000
+    - PORT=3000
