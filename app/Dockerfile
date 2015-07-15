@@ -10,7 +10,10 @@ CMD ["/sbin/my_init"]
 RUN rm -f /etc/service/nginx/down
 ADD webapp.conf /etc/nginx/sites-enabled/webapp.conf
 RUN mkdir /home/app/webapp
-ADD . /home/app/webapp
+
+# Install libs
+ADD package.json /home/app/webapp/package.json
+ADD bower.json   /home/app/webapp/bower.json
 
 WORKDIR /home/app/webapp
 RUN npm config set strict-ssl false
