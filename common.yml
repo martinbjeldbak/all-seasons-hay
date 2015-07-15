@@ -2,4 +2,19 @@ web:
   restart: always
   build: ./app
   ports:
-    - "3000:3000"
+    - "80:3000"
+
+# data:
+#   restart: always
+#   image: postgres:latest
+#   volumes:
+#     - /var/lib/postgresql
+#   command: true
+# 
+# postgres:
+#   restart: always
+#   image: postgres:latest
+#   volumes_from:
+#     - data
+#   ports:
+#     - "5432:5432"

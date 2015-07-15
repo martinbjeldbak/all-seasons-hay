@@ -5,4 +5,3 @@ web:
   environment:
     - NODE_ENV=production
     - PASSENGER_APP_ENV=production
-    - PORT=3000
