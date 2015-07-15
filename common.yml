@@ -4,12 +4,6 @@ web:
   ports:
     - "80:3000"
 
-# data:
-#   restart: always
-#   image: postgres:latest
-#   volumes:
-#     - /var/lib/postgresql
-#   command: true
 # 
 # postgres:
 #   restart: always
@@ -18,3 +12,10 @@ web:
 #     - data
 #   ports:
 #     - "5432:5432"
+
+# data:
+#   restart: always
+#   image: postgres:latest
+#   volumes:
+#     - /var/lib/postgresql
+#   command: true

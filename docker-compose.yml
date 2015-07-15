@@ -7,3 +7,5 @@ web:
   environment:
     - NODE_ENV=development
     - PASSENGER_APP_ENV=development
+  ports:
+    - "80:3000"
