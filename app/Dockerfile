@@ -8,12 +8,13 @@ CMD ["/sbin/my_init"]
 
 # Enable nginx + passenger
 RUN rm -f /etc/service/nginx/down
+RUN rm /etc/nginx/sites-enabled/default
 ADD webapp.conf /etc/nginx/sites-enabled/webapp.conf
+RUN sed -i "s/WEBPORT/4000/" /etc/nginx/sites-enabled/webapp.conf
 RUN mkdir /home/app/webapp
 
 # Install libs
-ADD package.json /home/app/webapp/package.json
-ADD bower.json   /home/app/webapp/bower.json
+ADD . /home/app/webapp
 
 WORKDIR /home/app/webapp
 RUN npm config set strict-ssl false
