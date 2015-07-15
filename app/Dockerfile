@@ -20,7 +20,7 @@ WORKDIR /tmp
 RUN npm config set strict-ssl false
 RUN npm install -g bower && npm install && bower install --allow-root
 
-RUN mkdir /home/app/webapp && cp -a /tmp/node_modules /home/app/webapp
+RUN mkdir -p /home/app/webapp/tmp && cp -a /tmp/node_modules /home/app/webapp
 
 # Copy src over
 WORKDIR /home/app/webapp
