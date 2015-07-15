@@ -3,6 +3,7 @@ web:
     file: common.yml
     service: web
   volumes:
-    - ./app:/app/src
+    - ./app:/home/app/webapp
   environment:
     - NODE_ENV=development
+    - PASSENGER_APP_ENV=development

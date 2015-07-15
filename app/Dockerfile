@@ -1,26 +1,25 @@
-FROM heroku/cedar:14
+FROM phusion/passenger-nodejs
 
-RUN useradd -d /app -m app
-USER app
-WORKDIR /app
+# Set correct environment variables.
+ENV HOME /root
 
-ENV HOME /app
-ENV NODE_ENGINE 0.10.38
-ENV PORT 3000
+# Use baseimage-docker's init process.
+CMD ["/sbin/my_init"]
 
-RUN mkdir -p /app/heroku/node
-RUN mkdir -p /app/src
-RUN curl -s https://s3pository.heroku.com/node/v$NODE_ENGINE/node-v$NODE_ENGINE-linux-x64.tar.gz | tar --strip-components=1 -xz -C /app/heroku/node
-ENV PATH /app/heroku/node/bin:$PATH
+# Enable nginx + passenger
+RUN rm -f /etc/service/nginx/down
+ADD webapp.conf /etc/nginx/sites-enabled/webapp.conf
+RUN mkdir /home/app/webapp
+ADD . /home/app/webapp
 
-RUN mkdir -p /app/.profile.d
-RUN echo "export PATH=\"/app/heroku/node/bin:/app/bin:/app/src/node_modules/.bin:\$PATH\"" > /app/.profile.d/nodejs.sh
-RUN echo "cd /app/src" >> /app/.profile.d/nodejs.sh
-WORKDIR /app/src
+WORKDIR /home/app/webapp
+RUN npm config set strict-ssl false
+RUN npm install -g bower
+RUN npm install
+RUN npm rebuild node-sass
+RUN bower install --allow-root
 
-EXPOSE 3000
+RUN chown -R app:app /home/app/
 
-ONBUILD COPY . /app/src
-ONBUILD RUN npm install
-ONBUILD RUN npm rebuild node-sass
-ONBUILD RUN bower install
+# Clean up APT when done.
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
