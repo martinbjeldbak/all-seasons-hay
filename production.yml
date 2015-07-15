@@ -5,3 +5,5 @@ web:
   environment:
     - NODE_ENV=production
     - PASSENGER_APP_ENV=production
+  ports:
+    - "3000:3000"
