@@ -4,4 +4,4 @@ web:
     service: web
   environment:
     - NODE_ENV=production
-    - PASSENGER_APP_ENV=development
+    - PASSENGER_APP_ENV=production
