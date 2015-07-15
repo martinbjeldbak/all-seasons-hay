@@ -22,7 +22,6 @@ RUN npm install -g bower && npm install && bower install --allow-root
 RUN mkdir -p /home/app/webapp/tmp && cp -a /tmp/node_modules /home/app/webapp
 
 # Copy src over
-WORKDIR /home/app/webapp
 ADD . /home/app/webapp
 
 RUN chown -R app:app /home/app/
