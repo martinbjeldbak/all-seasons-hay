@@ -8,23 +8,27 @@ body {
   color: #444;
 }
 
-nav.navbar.min-nav {
+nav.navbar.big-nav {
   min-height: 35px;
 }
 
-nav.min-nav {
+nav.big-nav {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
   font-size: 15px;
 }
 
-nav.min-nav .navbar-toggle {
+nav.big-nav .navbar-toggle {
   padding: 4px 5px;
   margin: 8px 15px 8px 0;
 }
 
+nav.big-nav.navbar-default {
+  background-color: transparent;
+}
+
 .navbar-default {
-  background-color:#222;
+  background-color: #222;
   border-color:transparent;
   transition: all 0.4s ease;
 }

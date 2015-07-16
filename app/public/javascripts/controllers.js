@@ -12,6 +12,10 @@ ctrls.directive("scroll", function($window) {
 ctrls.controller("MainController", function($scope) {
   $scope.tagline = "To the moon and back!";
   $scope.appName = "All Seasons Hay";
+  $scope.products = "products";
+  $scope.about = "about us";
+  $scope.photos = "photos";
+  $scope.contact = "contact us";
 
   var services = angular.element(document.getElementById('services'));
 
@@ -19,12 +23,11 @@ ctrls.controller("MainController", function($scope) {
     container.scrollTop(0, 5000);
   };
 
-  $scope.toSection2 = function() {
+  $scope.toServices = function() {
     container.scrollTo(services, 0, 1000);
   };
 });
 
 
 ctrls.controller("NavigationController", function($scope) {
-  $scope.services = "Services";
 });

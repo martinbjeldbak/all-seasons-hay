@@ -11,6 +11,7 @@ html
     // libs
     script(src="libs/angular/angular.min.js")
     script(src="libs/angular-route/angular-route.min.js")
+    script(src="libs/angular-scroll/angular-scroll.min.js")
 
     // load angular
     script(src="javascripts/controllers.js")
@@ -19,7 +20,7 @@ html
 
   body#page-top(ng-app="allSeasonsHay", ng-controller="MainController", scroll)
     div(ng-controller="NavigationController")
-      nav.navbar.navbar-default.navbar-fixed-top(ng-class="{'min-nav': !minimizeNav}", du-scroll-container="container")
+      nav.navbar.navbar-default.navbar-fixed-top(ng-class="{'big-nav': !minimizeNav}", du-scroll-container="container")
         .container
           .navbar-header
             button.navbar-toggle(data-toggle="collapse", type="button", data-target="#bs-example-navbar-collapse-1")
@@ -33,7 +34,14 @@ html
               li.hidden
                 a(href="#page-top")
               li
-                a(href="#services", du-smooth-scroll du-scrollspy) {{ services }}
+                a(href="#products", du-smooth-scroll du-scrollspy) {{ products }}
+              li
+                a(href="#about", du-smooth-scroll du-scrollspy) {{ about }}
+              li
+                a(href="#photos", du-smooth-scroll du-scrollspy) {{ photos }}
+              li
+                a(href="#contact", du-smooth-scroll du-scrollspy) {{ contact }}
+
     header
       .container
         .intro-text
