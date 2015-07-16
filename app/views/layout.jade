@@ -2,21 +2,43 @@ doctype html(lang="en")
 html
   head
     title= title
-    meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
 
-    link(rel='stylesheet', href='libs/bootstrap/dist/css/bootstrap.min.css')
-    link(rel='stylesheet', href='stylesheets/style.css')
+    link(rel="stylesheet", href="libs/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="stylesheets/style.css")
 
     // libs
-    script(src='libs/angular/angular.min.js')
-    script(src='libs/angular-route/angular-route.min.js')
+    script(src="libs/angular/angular.min.js")
+    script(src="libs/angular-route/angular-route.min.js")
 
     // load angular
-    script(src='javascripts/controllers.js')
-    script(src='javascripts/appRoutes.js')
-    script(src='javascripts/app.js')
-  body(ng-app="allSeasonsHay")
+    script(src="javascripts/controllers.js")
+    script(src="javascripts/appRoutes.js")
+    script(src="javascripts/app.js")
+
+  body#page-top(ng-app="allSeasonsHay", ng-controller="MainController", scroll)
+    div(ng-controller="NavigationController")
+      nav.navbar.navbar-default.navbar-fixed-top(ng-class="{'min-nav': !minimizeNav}")
+        .container
+          .navbar-header.page-scroll
+            button.navbar-toggle(data-toggle="collapse", type="button", data-target="#bs-example-navbar-collapse-1")
+              span.sr-only Toggle Navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href="#", scroll-to="#page-top", duration="800", easing="easeInQuad") {{appName}}
+          .collapse.navbar-collapse#bs-example-navbar-collapse-1
+            ul.nav.navbar-nav.navbar-right
+              li.hidden
+                a(href="#page-top")
+              li
+                a.page-scroll(href="#services") {{ services }}
     header
-      h1 All Seasons Hay
-    .container
-      block content
+      .container
+        .intro-text
+          .intro-lead-in All Seasons Hay
+          .intro-heading Hi!
+
+
+    block content

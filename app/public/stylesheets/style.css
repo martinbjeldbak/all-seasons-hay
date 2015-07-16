@@ -1,7 +1,105 @@
-@import url('http://fonts.googleapis.com/css?family=Quicksand');
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
 
 body {
-  font-family: 'Quicksand';
+  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #faf9f0;
   color: #444;
-  }
+}
+
+nav.navbar.min-nav {
+  min-height: 35px;
+}
+
+nav.min-nav {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  font-size: 15px;
+}
+
+nav.min-nav .navbar-brand {
+ font-size: 25px;
+}
+
+nav.min-nav .navbar-toggle {
+  padding: 4px 5px;
+  margin: 8px 15px 8px 0;
+}
+
+.navbar-default {
+  background-color:#222;
+  border-color:transparent;
+}
+
+.navbar-default .navbar-brand {
+  color: #fed136;
+  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+}
+
+.navbar-default .navbar-collapse {
+  border-color:rgba(255,255,255,.02);
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color:#fff;
+}
+
+.navbar-default .nav li a {
+  font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform:uppercase;
+  font-weight:400;
+  letter-spacing:1px;
+  color:#fff;
+}
+
+.navbar-default .nav li a:hover,.navbar-default .nav li a:focus {
+  color:#fed136;
+  outline:0;
+}
+
+.navbar-default .navbar-nav>.active>a {
+  border-radius:0;
+  color:#fff;
+  background-color:#fed136;
+}
+
+.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus {
+  color:#fff;
+  background-color:#fec503;
+}
+
+header {
+  background-image:url(../img/header-bg.jpg);
+  background-repeat:none;
+  background-attachment:scroll;
+  background-position:center center;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  background-size:cover;
+  -o-background-size:cover;
+  text-align:center;
+  color:#fff;
+}
+
+header .intro-text {
+  padding-top:100px;
+  padding-bottom:50px;
+}
+
+header .intro-text .intro-lead-in {
+  font-family:"Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-style:italic;
+  font-size:22px;
+  line-height:22px;
+  margin-bottom:25px;
+}
+
+header .intro-text .intro-heading {
+  font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform:uppercase;
+  font-weight:700;
+  font-size:50px;
+  line-height:50px;
+  margin-bottom:25px;
+}
