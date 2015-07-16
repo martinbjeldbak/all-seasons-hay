@@ -2,7 +2,7 @@ web:
   restart: always
   build: ./app
 
-# 
+#
 # postgres:
 #   restart: always
 #   image: postgres:latest

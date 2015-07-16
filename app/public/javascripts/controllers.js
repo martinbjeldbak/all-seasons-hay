@@ -1,11 +1,5 @@
-angular.module('MainCtrl', []).controller('MainController', function($scope) {
+var app = angular.module('Ctrls', []);
 
-    $scope.tagline = 'To the moon and back!';   
-
+app.controller('MainController', function($scope) {
+  $scope.tagline = 'To the moon and back!';   
 });
-//var app = angular.module('allSeasonsHay', []);
-//
-//app.controller('MainCtrl', function($scope) {
-//  $scope.tagline = 'To the moon and back!';
-//});
-

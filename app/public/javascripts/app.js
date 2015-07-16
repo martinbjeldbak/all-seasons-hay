@@ -1,1 +1,1 @@
-angular.module('allSeasonsHay', ['ngRoute', 'appRoutes', 'MainCtrl']);
+angular.module('allSeasonsHay', ['appRoutes']);
