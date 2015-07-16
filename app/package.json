@@ -12,9 +12,7 @@
     "express": "^4.12.4",
     "jade": "~1.9.2",
     "morgan": "~1.5.3",
-    "nib": "^1.1.0",
     "node-sass": "^3.2.0",
     "serve-favicon": "~2.2.1",
-    "stylus": "^0.51.1"
   }
 }
