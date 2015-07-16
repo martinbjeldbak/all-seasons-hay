@@ -1,5 +1,5 @@
-var app = angular.module('Ctrls', []);
+var ctrls = angular.module('Ctrls', []);
 
-app.controller('MainController', function($scope) {
+ctrls.controller('MainController', function($scope) {
   $scope.tagline = 'To the moon and back!';   
 });
