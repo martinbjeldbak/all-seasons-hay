@@ -5,5 +5,8 @@ angular.module('appRoutes', ['ngRoute', 'Ctrls']).config(['$routeProvider', '$lo
     controller: 'MainController'
   });
 
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
 }]);
