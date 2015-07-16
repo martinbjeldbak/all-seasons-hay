@@ -3,12 +3,7 @@ var ctrls = angular.module("Ctrls", []);
 ctrls.directive("scroll", function($window) {
   return function(scope, element, attrs) {
     angular.element($window).bind("scroll", function() {
-      if(this.pageYOffset >= 50) {
-        scope.minimizeNav = true;
-      }
-      else {
-        scope.minimizeNav = false;
-      }
+      scope.minimizeNav = this.pageYOffset >= 50;
       scope.$apply();
     });
   };
