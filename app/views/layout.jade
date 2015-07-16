@@ -19,9 +19,9 @@ html
 
   body#page-top(ng-app="allSeasonsHay", ng-controller="MainController", scroll)
     div(ng-controller="NavigationController")
-      nav.navbar.navbar-default.navbar-fixed-top(ng-class="{'min-nav': !minimizeNav}")
+      nav.navbar.navbar-default.navbar-fixed-top(ng-class="{'min-nav': !minimizeNav}", du-scroll-container="container")
         .container
-          .navbar-header.page-scroll
+          .navbar-header
             button.navbar-toggle(data-toggle="collapse", type="button", data-target="#bs-example-navbar-collapse-1")
               span.sr-only Toggle Navigation
               span.icon-bar
@@ -33,12 +33,12 @@ html
               li.hidden
                 a(href="#page-top")
               li
-                a.page-scroll(href="#services") {{ services }}
+                a(href="#services", du-smooth-scroll du-scrollspy) {{ services }}
     header
       .container
         .intro-text
           .intro-lead-in All Seasons Hay
           .intro-heading Hi!
-
-
-    block content
+          a.btn.btn-xl(href="#services", du-smooth-scroll) Tell me more
+    .container(du-scroll-container)
+      block content

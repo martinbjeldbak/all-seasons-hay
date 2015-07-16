@@ -7,6 +7,6 @@
     "animate.css": "latest",
     "angular": "latest",
     "angular-route": "latest",
-    "ngSmoothScroll": "~1.7.1"
+    "angular-scroll": "~0.7.1"
   }
 }
