@@ -1,9 +1,14 @@
 extends layout
 block content
-  div
-    h1= title
-    p Welcome to #{title}
-    p
-      | {{ tagline }}
-    p
-      | adsf asdf as fasdf asdf asdf sa asdælkjasælf kjasælfkj asælfkj saælkdjf ælasjf ælaskjdf æaslkjf æalskjf ælsakjf lksajf ælksajdfæ lksajd fæljasf ælsjaf ælksjaf ælksdjfæ lasjfælk sjaæf lkjsdfæl ksjafæl ajwæfljea æwlkfjælskjælcxkjvæ laskjf ælsjf ælkfj ewæljflsjflsajf læasjf ælsdkfj ælsdafj sædlfj sædlf kjaæsldkfj æsdlakj ælajfieoji qpwoetiu wqepoitu pwoetu powetu opqwut oiweut opqweut opqweit poqwutpqoewiut poqwuiet poqiwulf kjasdælf kjasdælfk jdsaælfkj dsælaf kjasædlfkj ælasefkjelæwfkj ælwkfjlwæ jfwelæ fjwælf jaælwefjk alæekf jalewæ fjalwæe kfjlæajflæeawjf alæk jflæawek fjelwæ fjkawlæf kjawlæf jkewlæf jawelfæ ajwle æfjk asldfkj aælsdkfj saædlfj asdlfj lskadjf alsækejf læwefj alæsdjf ksad jfsdkf jsdkf jdskfj dk fjdfkjd fdjfkd fjdkfjd kfjdkf jdkfjd æflakjfæl kasjd flækdsjlæsdkj aælsdk fjasældkf jadsælfk jadsælkf jasælkdf jasdlæfk jadsælkfj alsædkf jaælsd fjkasælk fjalsækdfj aælskdfj alæsdkf jasdlfj adælsfjk adsælf kjasdæfl kjdsflæ kjadsf æklj
+  section#products
+    .container(ng-controller="ProductsController")
+      .row
+        .col-md-12.text-center
+          h2.section-heading Products
+          h3.section-subheading Retail and Wholesale. We deliver!
+      .row
+        div.products(ng-repeat="row in productColumns")
+          .col-md-6.text-center
+            ul.list-unstyled
+              li.product(ng-repeat="product in row")
+                span {{ product }}

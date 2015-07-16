@@ -126,6 +126,11 @@ section h3.section-subheading {
   margin-bottom:75px;
 }
 
+.products {
+  font-size: 15px;
+  font-weight:400;
+}
+
 footer {
   text-align:center;
   padding:25px 0;

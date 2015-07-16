@@ -9,6 +9,21 @@ ctrls.directive("scroll", function($window) {
   };
 });
 
+ctrls.controller("ProductsController", function($scope) {
+  $scope.products = ["Hay", "Equine Feed", "Grains", "Livestock feed", "Supplements", "Dog", "Cat", "Poultry/game bird", "Bird seed", "Small pet", "Fish", "Bedding/Shavings", "Corrals and Gates", "Fencing", "Tanks and Feeders", "Carts", "Coops and Cages", "Stall mats", "Tack", "Pest control", "Grooming"];
+
+  $scope.productColumns = columnize($scope.products, 2);
+  function columnize(input, cols) {
+    var arr = [];
+    for(i = 0; i < input.length; i++) {
+      var colIdx = i % cols;
+      arr[colIdx] = arr[colIdx] || [];
+      arr[colIdx].push(input[i]);
+    }
+    return arr;
+  }
+});
+
 ctrls.controller("MainController", function($scope) {
 
   $scope.tagline = "Family owned and operated since 1982.";
