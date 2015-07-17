@@ -1,4 +1,4 @@
-var ctrls = angular.module("Ctrls", []);
+var ctrls = angular.module("Ctrls", ["duScroll"]);
 
 ctrls.directive("scroll", function($window) {
   return function(scope, element, attrs) {
@@ -49,14 +49,15 @@ ctrls.controller("MainController", function($scope) {
   };
 
 
-  var services = angular.element(document.getElementById('services'));
+  var container = angular.element(document.getElementById('top'));
+  var services = angular.element(document.getElementById('products'));
 
   $scope.toTheTop = function() {
     container.scrollTop(0, 5000);
   };
 
   $scope.toServices = function() {
-    container.scrollTo(services, 0, 1000);
+    container.scrollTo(products, 0, 1000);
   };
 });
 

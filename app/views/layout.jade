@@ -11,44 +11,42 @@ html
     // libs
     script(src="libs/angular/angular.min.js")
     script(src="libs/angular-route/angular-route.min.js")
-    script(src="libs/angular-scroll/angular-scroll.min.js")
+    script(src="libs/angular-scroll/angular-scroll.js")
 
     // load angular
     script(src="javascripts/controllers.js")
     script(src="javascripts/appRoutes.js")
     script(src="javascripts/app.js")
 
-  body(ng-app="allSeasonsHay", ng-controller="MainController", scroll)
-    div(ng-controller="NavigationController")
-      nav.navbar.navbar-default.navbar-fixed-top(ng-class="{'big-nav': !minimizeNav}", du-scroll-container="container")
-        .container
-          .navbar-header
-            button.navbar-toggle(data-toggle="collapse", type="button", data-target="#bs-example-navbar-collapse-1")
-              span.sr-only Toggle Navigation
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-            a.navbar-brand(href="#", ng-click="toTheTop()") {{appName}}
-          .collapse.navbar-collapse#bs-example-navbar-collapse-1
-            ul.nav.navbar-nav.navbar-right
-              li.hidden
-                a(href="#page-top")
-              li
-                a(href="#products", du-smooth-scroll du-scrollspy) {{ products }}
-              li
-                a(href="#about", du-smooth-scroll du-scrollspy) {{ about }}
-              li
-                a(href="#photos", du-smooth-scroll du-scrollspy) {{ photos }}
-              li
-                a(href="#contact", du-smooth-scroll du-scrollspy) {{ contact }}
-
+  body#top(ng-app="allSeasonsHay", ng-controller="MainController", scroll)
+    nav.navbar.navbar-default.navbar-fixed-top(ng-controller="NavigationController", ng-class="{'big-nav': !minimizeNav}")
+      .container
+        .navbar-header
+          button.navbar-toggle(data-toggle="collapse", type="button", data-target="#bs-example-navbar-collapse-1")
+            span.sr-only Toggle Navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href="#top", du-smooth-scroll) {{appName}}
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          ul.nav.navbar-nav.navbar-right
+            li.hidden
+              a(href="#top")
+            li(du-scrollspy)
+              a(href="#products", du-smooth-scroll, du-scrollspy) {{ products }}
+            li
+              a(href="#about", du-smooth-scroll, du-scrollspy) {{ about }}
+            li
+              a(href="#photos", du-smooth-scroll, du-scrollspy) {{ photos }}
+            li
+              a(href="#contact", du-smooth-scroll, du-scrollspy) {{ contact }}
     header
       .container
         .intro-text
           .intro-title {{ appName }}
           .intro-heading {{ tagline }}
           a.btn.btn-xl(href="#products", du-smooth-scroll) Products
-    .container(du-scroll-container)
+    .container
       block content
     footer
       .container

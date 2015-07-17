@@ -9,18 +9,12 @@ body {
   webkit-tap-highlight-color:#fed136;
 }
 
-
 .navbar-default {
   background-color: #222;
   border-color:transparent;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 }
 
-.navbar-default .navbar-brand {
-  color: #fed136;
-  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
-  transition: all 0.4s ease;
-}
 
 .navbar-default .navbar-collapse {
   border-color:rgba(255,255,255,.02);
@@ -30,6 +24,7 @@ body {
   background-color:#fff;
 }
 
+
 .navbar-default .nav li a {
   font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   text-transform:uppercase;
@@ -38,29 +33,49 @@ body {
   color:#fff;
 }
 
+.navbar-default .navbar-nav>.active>a {
+border-radius:0;
+color:#fff;
+background-color:#fed136;
+}
+
+.navbar-default .nav li a.active {
+  border-radius:3px;
+  color:#fff;
+  background-color:#fed136;
+}
+
 .navbar-default .nav li a:hover,.navbar-default .nav li a:focus {
   color:#fed136;
   outline:0;
-}
-
-.navbar-default .navbar-nav>.active>a {
-  border-radius:0;
-  color:#fff;
-  background-color:#fed136;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus {
   color:#fff;
   background-color:#fec503;
 }
+
 nav.navbar.big-nav {
   min-height: 35px;
+}
+
+.navbar-default.big-nav {
+  transition: all 0.2s ease;
+}
+
+.navbar-default.big-nav .navbar-brand {
+  font-size: 1.5em;
+}
+
+.navbar-default .navbar-brand {
+  color: #fed136;
+  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+  transition: all 0.2s ease;
 }
 
 nav.big-nav {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
-  font-size: 15px;
 }
 
 nav.big-nav .navbar-toggle {
@@ -141,3 +156,26 @@ footer span.copyright {
   font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   text-transform:none;
 }
+
+
+.btn-primary {
+color:#fff;
+background-color:#fed136;
+font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+text-transform:uppercase;
+font-weight:700;
+border-color:#fed136;
+}
+
+.btn-xl {
+color:#fff;
+background-color:#fed136;
+font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+text-transform:uppercase;
+font-weight:700;
+border-radius:3px;
+font-size:18px;
+border-color:#fed136;
+padding:20px 40px;
+}
+
