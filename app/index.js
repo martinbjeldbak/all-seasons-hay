@@ -8,7 +8,7 @@ router.get('/api', function(req, res, next) {
 });
 
 router.get('*', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
 
 module.exports = router;
