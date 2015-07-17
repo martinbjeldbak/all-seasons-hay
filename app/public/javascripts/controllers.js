@@ -9,6 +9,10 @@ ctrls.directive("scroll", function($window) {
   };
 });
 
+ctrls.controller("AboutController", function($scope) {
+  $scope.heading = "About Us";
+});
+
 ctrls.controller("ProductsController", function($scope) {
   $scope.products = ["Hay", "Equine Feed", "Grains", "Livestock feed", "Supplements", "Dog", "Cat", "Poultry/game bird", "Bird seed", "Small pet", "Fish", "Bedding/Shavings", "Corrals and Gates", "Fencing", "Tanks and Feeders", "Carts", "Coops and Cages", "Stall mats", "Tack", "Pest control", "Grooming"];
 
