@@ -75,11 +75,8 @@ html
                     = ' '
                     a(href="tel:1-{{ cleanPhoneNr(phone2) }}") {{ phone2 }}
             .row
-              .col-md-6.col-md-offset-3
-                  span.fax fax:
-                    = ' '
-                    {{ fax }}
-
+              .col-md-12.text-center
+                  span.fax fax: {{ fax }}
           .col-md-4
             .email
               span.email email:
