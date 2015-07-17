@@ -13,6 +13,7 @@ body {
   background-color: #222;
   border-color:transparent;
   transition: all 0.2s ease;
+  padding: 5px 0;
 }
 
 
@@ -33,27 +34,22 @@ body {
   color:#fff;
 }
 
-.navbar-default .navbar-nav>.active>a {
-border-radius:0;
-color:#fff;
-background-color:#fed136;
-}
-
-.navbar-default .nav li a.active {
+.navbar-default .nav li>a.active {
   border-radius:3px;
   color:#fff;
   background-color:#fed136;
 }
 
-.navbar-default .nav li a:hover,.navbar-default .nav li a:focus {
+.navbar-default .nav li>a:hover,.navbar-default .nav li>a:focus {
   color:#fed136;
   outline:0;
 }
 
-.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus {
-  color:#fff;
+.navbar-default .navbar-nav li>a.active:hover,.navbar-default .navbar-nav li>a.active:focus {
+  color: #fff;
   background-color:#fec503;
 }
+
 
 nav.navbar.big-nav {
   min-height: 35px;
@@ -74,8 +70,8 @@ nav.navbar.big-nav {
 }
 
 nav.big-nav {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
 }
 
 nav.big-nav .navbar-toggle {
@@ -159,23 +155,23 @@ footer span.copyright {
 
 
 .btn-primary {
-color:#fff;
-background-color:#fed136;
-font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-text-transform:uppercase;
-font-weight:700;
-border-color:#fed136;
+  color:#fff;
+  background-color:#fed136;
+  font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform:uppercase;
+  font-weight:700;
+  border-color:#fed136;
 }
 
 .btn-xl {
-color:#fff;
-background-color:#fed136;
-font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-text-transform:uppercase;
-font-weight:700;
-border-radius:3px;
-font-size:18px;
-border-color:#fed136;
-padding:20px 40px;
+  color:#fff;
+  background-color:#fed136;
+  font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform:uppercase;
+  font-weight:700;
+  border-radius:3px;
+  font-size:18px;
+  border-color:#fed136;
+  padding:20px 40px;
 }
 
