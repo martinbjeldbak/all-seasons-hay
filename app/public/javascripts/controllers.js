@@ -46,7 +46,7 @@ ctrls.controller("MainController", function($scope) {
   $scope.addressState = "CA";
   $scope.addressZip = "92320";
 
-  $scope.addressGmaps = "https://www.google.com/maps/place/621+E+Avenue+L,+Calimesa,+CA+92320/@33.999369,-117.020488,704m/data=!3m2!1e3!4b1!4m2!3m1!1s0x80db5079fd7a457f:0x14d12cd2a82a8d02";
+  $scope.addressGmaps = "https://www.google.com/maps/place/621+W+Ave+L,+Calimesa,+CA+92320/@33.9990765,-117.0615894,634m/data=!3m1!1e3!4m2!3m1!1s0x80db50bc0ad2098b:0x3bd636c64f1bf3aa!6m1!1e1";
 
   $scope.cleanPhoneNr = function(phoneNr) {
     return phoneNr.replace(/\./g, '');
