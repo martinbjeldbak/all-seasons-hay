@@ -17,9 +17,9 @@ ADD package.json /tmp/package.json
 ADD bower.json /tmp/bower.json
 WORKDIR /tmp
 RUN npm config set strict-ssl false
-RUN npm install -g bower && npm install && bower install --allow-root
+# RUN npm install -g bower && npm install && bower install --allow-root
 
-RUN mkdir -p /home/app/webapp/tmp && cp -a /tmp/node_modules /home/app/webapp
+# RUN mkdir -p /home/app/webapp/tmp && mkdir -p /home/app/webapp/public/libs && cp -a /tmp/node_modules/. /home/app/webapp/public/libs && cp -a /tmp/bower_components/. /home/app/webapp/public/libs
 
 # Copy src over
 ADD . /home/app/webapp
