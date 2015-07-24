@@ -10,13 +10,14 @@ ctrls.directive("scroll", function($window) {
 });
 
 ctrls.controller("AboutController", function($scope) {
-  $scope.heading = "About Us";
 });
 
-ctrls.controller("ProductsController", function($scope) {
-  $scope.products = ["Hay", "Equine Feed", "Grains", "Livestock feed", "Supplements", "Dog", "Cat", "Poultry/game bird", "Bird seed", "Small pet", "Fish", "Bedding/Shavings", "Corrals and Gates", "Fencing", "Tanks and Feeders", "Carts", "Coops and Cages", "Stall mats", "Tack", "Pest control", "Grooming"];
+ctrls.controller("ProductsController", function($scope, $http) {
+  $http.get('/api/v1/products').success(function(data) {
+    angular.extend($scope, data);
+    $scope.productColumns = columnize($scope.products, 2);
+  });
 
-  $scope.productColumns = columnize($scope.products, 2);
   function columnize(input, cols) {
     var arr = [];
     for(i = 0; i < input.length; i++) {
@@ -28,34 +29,17 @@ ctrls.controller("ProductsController", function($scope) {
   }
 });
 
-ctrls.controller("MainController", function($scope) {
+ctrls.controller("MainController", function($scope, $http) {
+  var container = angular.element(document.getElementById('top'));
+  var services  = angular.element(document.getElementById('products'));
 
-  $scope.tagline = "Family owned and operated since 1982.";
-  $scope.appName = "All Seasons Hay Co.";
-  $scope.products = "products";
-  $scope.about = "about us";
-  $scope.photos = "photos";
-  $scope.contact = "contact us";
-  $scope.email = "allseasonshay@gmail.com";
-  $scope.phone1 = "909.795.2921";
-  $scope.phone2 = "909.795.2245";
-  $scope.fax = "909.795.2252";
-
-  $scope.addressStreet = "621 West Avenue L";
-  $scope.addressCity = "Calimesa";
-  $scope.addressState = "CA";
-  $scope.addressZip = "92320";
-
-  $scope.addressGmaps = "https://www.google.com/maps/place/621+W+Ave+L,+Calimesa,+CA+92320/@33.9990765,-117.0615894,634m/data=!3m1!1e3!4m2!3m1!1s0x80db50bc0ad2098b:0x3bd636c64f1bf3aa!6m1!1e1";
+  $http.get('/api/v1/companyinfo').success(function(data) {
+    angular.extend($scope, data);
+  });
 
   $scope.cleanPhoneNr = function(phoneNr) {
     return phoneNr.replace(/\./g, '');
   };
-
-
-  var container = angular.element(document.getElementById('top'));
-  var services = angular.element(document.getElementById('products'));
-
   $scope.toTheTop = function() {
     container.scrollTop(0, 5000);
   };
