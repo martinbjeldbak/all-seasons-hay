@@ -19,65 +19,7 @@ html
     script(src="javascripts/app.js")
 
   body#top(ng-app="allSeasonsHay", ng-controller="MainController", scroll)
-    nav.navbar.navbar-default.navbar-fixed-top(ng-controller="NavigationController", ng-class="{'big-nav': !minimizeNav}")
-      .container
-        .navbar-header
-          button.navbar-toggle(data-toggle="collapse", type="button", data-target="#bs-example-navbar-collapse-1")
-            span.sr-only Toggle Navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href="#top", du-smooth-scroll) {{appName}}
-        .collapse.navbar-collapse#bs-example-navbar-collapse-1
-          ul.nav.navbar-nav.navbar-right
-            li.hidden
-              a(href="#top")
-            li(du-scrollspy)
-              a(href="#products", du-smooth-scroll, du-scrollspy) {{ products }}
-            li
-              a(href="#about", du-smooth-scroll, du-scrollspy) {{ about }}
-            li
-              a(href="#photos", du-smooth-scroll, du-scrollspy) {{ photos }}
-            li
-              a(href="#contact", du-smooth-scroll, du-scrollspy) {{ contact }}
-    header
-      .container
-        .intro-text
-          .intro-title {{ appName }}
-          .intro-heading {{ tagline }}
+    include partials/nav
+    include partials/header
     block content
-    footer
-      .container
-        .row
-          .col-md-4
-            span.copyright Copyright &copy; All Seasons Hay Co. 2015
-          .col-md-4
-            .row.row-centered
-              .col-md-10.col-md-offset-1
-                .adr
-                  a(href="{{ addressGmaps }}")
-                    span.street-address {{ addressStreet }}
-                    = ' '
-                    span.city {{ addressCity }}
-                    = ' '
-                    span.state {{ addressState }}
-                    = ' '
-                    span.zip {{ addressZip }}
-            .row
-              .col-md-6
-                  span.phone ph:
-                    = ' '
-                    a(href="tel:1-{{ cleanPhoneNr(phone1) }}") {{ phone1 }}
-                  = ' '
-              .col-md-6
-                  span.phone ph2: 
-                    = ' '
-                    a(href="tel:1-{{ cleanPhoneNr(phone2) }}") {{ phone2 }}
-            .row
-              .col-md-12.text-center
-                  span.fax fax: {{ fax }}
-          .col-md-4
-            .email
-              span.email email:
-                = ' '
-                a(href="mailto:{{ email }}") {{ email }}
+    include partials/footer

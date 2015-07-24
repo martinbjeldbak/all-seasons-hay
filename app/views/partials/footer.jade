@@ -1,0 +1,35 @@
+footer
+  .container
+    .row
+      .col-md-4
+        span.copyright Copyright &copy; All Seasons Hay Co. 2015
+      .col-md-4
+        .row.row-centered
+          .col-md-10.col-md-offset-1
+            .adr
+              a(href="{{ addressGmaps }}")
+                span.street-address {{ addressStreet }}
+                = ' '
+                span.city {{ addressCity }}
+                = ' '
+                span.state {{ addressState }}
+                = ' '
+                span.zip {{ addressZip }}
+        .row
+          .col-md-6
+              span.phone ph:
+                = ' '
+                a(href="tel:1-{{ cleanPhoneNr(phone1) }}") {{ phone1 }}
+              = ' '
+          .col-md-6
+              span.phone ph2: 
+                = ' '
+                a(href="tel:1-{{ cleanPhoneNr(phone2) }}") {{ phone2 }}
+        .row
+          .col-md-12.text-center
+              span.fax fax: {{ fax }}
+      .col-md-4
+        .email
+          span.email email:
+            = ' '
+            a(href="mailto:{{ email }}") {{ email }}

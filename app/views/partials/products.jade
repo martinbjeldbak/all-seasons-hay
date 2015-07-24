@@ -1,0 +1,11 @@
+.container(ng-controller="ProductsController")
+  .row
+    .col-md-12.text-center
+      h2.section-heading Products
+      h3.section-subheading Retail and Wholesale. We deliver!
+  .row
+    div.products(ng-repeat="row in productColumns")
+      .col-md-6.text-center
+        ul.list-unstyled
+          li.product(ng-repeat="product in row")
+            span {{ product }}
