@@ -1,1 +1,2 @@
-angular.module('allSeasonsHay', ['appRoutes']);
+angular.module("allSeasonsHay", ["appRoutes"]);
+// $analyticsProvider.developerMode(ENV.name != 'production')

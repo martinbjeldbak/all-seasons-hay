@@ -1,4 +1,5 @@
-var ctrls = angular.module("Ctrls", ["duScroll"]);
+var ctrls = angular.module("Ctrls", ["duScroll",
+                                     ]);
 
 ctrls.directive("scroll", function($window) {
   return function(scope, element, attrs) {
