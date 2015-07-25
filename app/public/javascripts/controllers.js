@@ -35,11 +35,12 @@ ctrls.controller("MainController", function($scope, $http) {
 
   $http.get('/api/v1/companyinfo').success(function(data) {
     angular.extend($scope, data);
+
+    $scope.cleanPhoneNr = function(phoneNr) {
+      return phoneNr.replace(/\./g, '');
+    };
   });
 
-  $scope.cleanPhoneNr = function(phoneNr) {
-    return phoneNr.replace(/\./g, '');
-  };
   $scope.toTheTop = function() {
     container.scrollTop(0, 5000);
   };
