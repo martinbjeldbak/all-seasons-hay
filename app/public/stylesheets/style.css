@@ -4,27 +4,26 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
 
 body {
-  overflow-x:hidden;
-  font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-  webkit-tap-highlight-color:#fed136;
+  overflow-x: hidden;
+  font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+  webkit-tap-highlight-color: #fed136;
 }
 
 .navbar-default {
   background-color: #222;
-  border-color:transparent;
+  border-color: transparent;
   transition: all 0.2s ease;
   padding: 5px 0;
 }
 
-
 .navbar-default .navbar-collapse {
-  border-color:rgba(255,255,255,.02);
+  border-color: rgba(255,255,255,.02);
 }
+
 
 .navbar-default .navbar-toggle .icon-bar {
   background-color:#fff;
 }
-
 
 .navbar-default .nav li a {
   font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -60,7 +59,7 @@ nav.navbar.big-nav {
 }
 
 .navbar-default.big-nav .navbar-brand {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .navbar-default .navbar-brand {
@@ -81,6 +80,19 @@ nav.big-nav .navbar-toggle {
 
 nav.big-nav.navbar-default {
   background-color: transparent;
+}
+
+
+@media (max-width: 992px) {
+  .big-nav .in ul {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2),  rgba(51, 51, 51, 1));
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  header .intro-text .intro-title {
+    font-size: 20px !important;
+  }
 }
 
 header {

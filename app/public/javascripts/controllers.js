@@ -53,4 +53,5 @@ ctrls.controller("MainController", function($scope, $http) {
 
 
 ctrls.controller("NavigationController", function($scope) {
+    $scope.isCollapsed = true;
 });
