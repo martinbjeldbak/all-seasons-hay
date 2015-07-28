@@ -6,9 +6,9 @@ ctrls.run(function($rootScope) {
   }
   $rootScope.$on('duScrollspy:becameActive', function($event, $element){
     //Automaticly update location
-    var hash = $element.prop('hash');
+    var hash = $element.prop("hash").replace("#", "");
     if (hash) {
-      history.replaceState(null, null, hash.replace("#", ""));
+      history.replaceState(null, null, hash);
     }
   });
 });
