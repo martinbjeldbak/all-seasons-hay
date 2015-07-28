@@ -1,10 +1,27 @@
-var ctrls = angular.module("Ctrls", ["duScroll",
-                                     ]);
+var ctrls = angular.module("Ctrls", ["duScroll"]);
+
+ctrls.run(function($rootScope) {
+  if(!window.history || !history.replaceState) {
+    return;
+  }
+  $rootScope.$on('duScrollspy:becameActive', function($event, $element){
+    //Automaticly update location
+    var hash = $element.prop('hash');
+    if (hash) {
+      history.replaceState(null, null, hash);
+    }
+  });
+});
 
 ctrls.directive("scroll", function($window) {
   return function(scope, element, attrs) {
     angular.element($window).bind("scroll", function() {
-      scope.minimizeNav = this.pageYOffset >= 100;
+      if(this.pageYOffset >= 100) {
+        scope.minimizeNav = true;
+      } else {
+        scope.minimizeNav = false;
+        history.replaceState(null, null, '/');
+      }
       scope.$apply();
     });
   };
