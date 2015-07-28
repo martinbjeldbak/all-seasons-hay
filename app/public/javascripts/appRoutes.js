@@ -17,7 +17,7 @@ angular.module("appRoutes", ["ngRoute", "Ctrls", "angularytics", "ui.bootstrap"
       enabled: true,
       requireBase: false
     });
-    AngularyticsProvider.setEventHandlers(["Console", "GoogleUniversal"]);
+    AngularyticsProvider.setEventHandlers(["GoogleUniversal"]);
   }]).run(function(Angularytics) {
     Angularytics.init();
   });;
