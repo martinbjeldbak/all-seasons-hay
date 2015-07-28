@@ -5,13 +5,17 @@ angular.module("appRoutes", ["ngRoute", "Ctrls", "angularytics", "ui.bootstrap"
   "AngularyticsProvider",
   function($routeProvider, $locationProvider, AngularyticsProvider) {
     $routeProvider
-      .when("/", {
-                    templateUrl: "views/index.jade",
-                    controller: "MainController"
-           });
+    .when("/", {
+      templateUrl: "views/index.jade",
+      controller: "MainController"
+    })
+    .when("/products", {
+      templateUrl: "views/index.jade",
+      controller: "MainController"
+    });
     $locationProvider.html5Mode({
-                    enabled: true,
-                    requireBase: false
+      enabled: true,
+      requireBase: false
     });
     AngularyticsProvider.setEventHandlers(["Console", "GoogleUniversal"]);
   }]).run(function(Angularytics) {

@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.json('its workinng (root api routee)');
+  res.json('its working (root api routee)');
 });
 
 router.get('/products', function(req, res, next) {

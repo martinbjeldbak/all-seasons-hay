@@ -8,7 +8,7 @@ ctrls.run(function($rootScope) {
     //Automaticly update location
     var hash = $element.prop("hash").replace("#", "");
     if (hash) {
-      history.replaceState(null, null, hash);
+      history.replaceState(null, null, hash.replace("#", ""));
     }
   });
 });
