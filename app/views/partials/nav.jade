@@ -1,7 +1,7 @@
 nav.navbar.navbar-default.navbar-fixed-top(ng-controller="NavigationController", ng-class="{'big-nav': !minimizeNav}")
   .container
     .navbar-header
-      button.navbar-toggle(data-toggle="collapse", type="button", data-target="#bs-example-navbar-collapse-1")
+      button.navbar-toggle(type="button", ng-click="isCollapsed = !isCollapsed")
         span.sr-only Toggle Navigation
         span.icon-bar
         span.icon-bar
@@ -10,11 +10,11 @@ nav.navbar.navbar-default.navbar-fixed-top(ng-controller="NavigationController",
         span
           | {{ appName }}
           img.logo-nav(src="/images/logo.png")
-    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+    .collapse.navbar-collapse#navigationbar(collapse="isCollapsed")
       ul.nav.navbar-nav.navbar-right
         li.hidden
           a(href="#top")
-        li(du-scrollspy)
+        li
           a(href="#products", du-smooth-scroll, du-scrollspy) {{ products }}
         li
           a(href="#about", du-smooth-scroll, du-scrollspy) {{ about }}

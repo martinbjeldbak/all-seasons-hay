@@ -8,6 +8,7 @@
     "angular": "latest",
     "angular-route": "latest",
     "angular-scroll": "~0.7.1",
-    "angularytics": "~0.4.0"
+    "angularytics": "~0.4.0",
+    "angular-bootstrap": "~0.13.1"
   }
 }

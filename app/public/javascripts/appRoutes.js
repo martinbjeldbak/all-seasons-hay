@@ -1,4 +1,5 @@
-angular.module("appRoutes", ["ngRoute", "Ctrls", "angularytics"]).config([
+angular.module("appRoutes", ["ngRoute", "Ctrls", "angularytics", "ui.bootstrap"
+]).config([
   "$routeProvider",
   "$locationProvider",
   "AngularyticsProvider",
