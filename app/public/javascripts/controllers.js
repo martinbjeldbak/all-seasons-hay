@@ -14,7 +14,7 @@ ctrls.controller("AboutController", function($scope) {
 });
 
 ctrls.controller("ProductsController", function($scope, $http) {
-  $http.get('/api/v1/products').success(function(data) {
+  $http.get("/api/v1/products").success(function(data) {
     angular.extend($scope, data);
     $scope.productColumns = columnize($scope.products, 2);
   });
@@ -31,14 +31,14 @@ ctrls.controller("ProductsController", function($scope, $http) {
 });
 
 ctrls.controller("MainController", function($scope, $http) {
-  var container = angular.element(document.getElementById('top'));
-  var services  = angular.element(document.getElementById('products'));
+  var container = angular.element(document.getElementById("top"));
+  var services  = angular.element(document.getElementById("products"));
 
-  $http.get('/api/v1/companyinfo').success(function(data) {
+  $http.get("/api/v1/companyinfo").success(function(data) {
     angular.extend($scope, data);
 
     $scope.cleanPhoneNr = function(phoneNr) {
-      return phoneNr.replace(/\./g, '');
+      return phoneNr.replace(/\./g, "");
     };
   });
 
